@@ -143,10 +143,13 @@ main dl{
 }
 .side {
     display: grid;
-    grid-template-columns: 1frx;
+    grid-template-columns: 1fr;
     padding-top: 25px;
 }
-.side img{
-    grid-row: 1 / -1;
+.recipe-card{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0;
+
 }
-    
+
