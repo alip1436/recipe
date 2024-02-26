@@ -67,7 +67,7 @@ main {
 h1 {
     font-size: 40px;
 }
-h1, h2, h3, nav a, nav span, menu li, #social li, footer{
+h1, h2, h3, nav a, nav span, menu li, #social li, footer p{
     font-family: "Bebas Neue", sans-serif;
     text-align: center;
     text-transform: uppercase;
@@ -102,10 +102,24 @@ a, menu svg{
     justify-content: center;
     
 }
+a:hover {
+    color:#7ABFBF;
+}
+svg:hover {
+    stroke: #7ABFBF;
+    background-color: #EB5428;
+}
+a:focus, svg:focus {
+    color:#7ABFBF;
+    
+    background-color: #EB5428;
+}
 /*header*/
 header{
     background-color: #F2F2F2;
     padding-top: 10px;
+    margin:125px auto;
+    
 }
 menu {
     display: flex;
@@ -139,17 +153,200 @@ main dl{
 }
 #side-dish {
     background-color:#7ABFBF;
-    padding: 10px;
+    padding-top: 10px;
 }
 .side {
     display: grid;
     grid-template-columns: 1fr;
-    padding-top: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
+    grid-gap: 0px;
+   
 }
 .recipe-card{
     display: flex;
     flex-direction: row;
-    padding: 2rem 0;
+    padding: 1rem 0;
+    overflow: initial;
+}
+.recipe-card img{
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    padding-right: 10px;
+}
+.card-content {
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: start;
+    
+}
+.card-content p {
+    padding: 0px;
+}
+.card-content span{
+    font-weight: bold;
+}
 
+/* nav */
+nav {
+    display: grid;
+    grid-template-columns: 55px 273px 55px;
+    grid-template-rows: 50px;
+    height: 50px;
+    
+    justify-content: left;  
+    align-content: space-evenly;
+    gap: 5px;
+    position: fixed;
+    top: 0px;
+    background-color: #ffffff;
+}
+nav h2 {
+  visibility:hidden;
+  height:1px;
+}
+nav h2{
+    grid-row: 2 / span 2;
+    grid-column: 1 / 2;
+    grid-column-end: -1;
+    position: absolute;
+}
+nav ul a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+
+nav ul {
+    display:flex;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    
+}
+
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: transparent;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+.extra {
+    position:absolute;
+    z-index: 1;
+    background-color: #EB5428;
+    grid-row: 2 / span 2;
+    grid-column: 1 / 2;
+}
+.avatar {
+    position:absolute;
+    z-index: 2;
+}
+.icon-tabler-search, .icon-tabler-tools-kitchen {
+    background-color: #EB5428;
+}
+/*form*/
+form {
+    display: flex;
+    z-index: 3;
+    position: fixed;
+    top: 60px;
+    flex-direction: row;
+    background-color: #F2F2F2;
+    width:414px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 15px;;
+}
+legend {
+    visibility: hidden;
+    height: 10px;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+}
+#search {
+    display: flex;
+    align-items: center;
+    border: #EB5428 solid 2px;
+}
+form input{
+    padding: 5px;
+    width: 250px;
+    height: 25px;
+}
+
+/* footer */
+footer h2,  footer h4{
+    visibility: hidden;
+    height: 1px;
+}
+#social ul{
+    display: flex;
+    Margin:5px;
+    margin-top: 10px;
+    align-items: center;
+    width: 414px;
+    justify-content: space-evenly;
+}
+footer img {
+    width: 200px;
+    display: block;
+    position: relative;
+    padding-bottom: 15px;
+    margin: 0 auto;
+}
+footer p{
+    line-height: 0.5;
+    padding: 5px;
 }
 
