@@ -106,8 +106,7 @@ svg:hover {
     background-color: #EB5428;
 }
 a:focus, svg:focus {
-    color:#7ABFBF;
-    
+    color:#7ABFBF;   
     background-color: #EB5428;
 }
 /*header*/
@@ -186,7 +185,6 @@ main dl{
 }
 /* nav */
 .hamburger-menu > svg {
-    
     vertical-align:middle;
 }
 nav {
@@ -194,7 +192,6 @@ nav {
     grid-template-columns: 70px 244px 70px;
     grid-template-rows: 75px;
     height: 67px;
-
     justify-content: left;  
     align-content: space-evenly;
     gap: 5px;
@@ -264,7 +261,7 @@ input:checked ~ label span:before {
     transform: rotate(-45deg);
 }
 input:checked ~ label span:after {
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
 }
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
@@ -279,8 +276,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 }
 .avatar {
     position:absolute;
+    right: 0px;
     width: 67px;
-    padding-left: 250px;
     line-height: 1;
     padding-top: 5px; 
 }
